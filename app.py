@@ -365,8 +365,8 @@ with open(sqldw, "rb") as sql_file:
     st.download_button(
         label="Baixar Views do SQL",
         data=sql_01,
-        file_name="assets\Views_qualitor_SA.rar"
-    )
+        file_name="Querys & Views SQL",
+        mime="application/octet-stream")
 
 st.write('-' * 30)
 
