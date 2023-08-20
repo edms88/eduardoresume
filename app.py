@@ -5,11 +5,14 @@ from PIL import Image
 
 # path Settings
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-css_file = current_dir / "styles" / "main.css"
+css_file    = current_dir / "styles" / "main.css"
 resume_file = current_dir / "assets" / "Profile.pdf"
 profile_pic = current_dir / "assets" / "profile-pic.png"
-csc = current_dir / "assets" / "csc.pbix"
+csc_print   = current_dir / "assets" / "cscprint.png"
 constatlogo = current_dir / "assets" / "constatlogo.png"
+log1        = current_dir / "assets" / "logistica.png"
+sales       = current_dir / "assets" / "Sales BRasil.png"
+comercial   = current_dir / "assets" / "vendas01.png"
 
 # General Settings
 PAGE_TITLE = 'Eduardo Mendes'
@@ -55,6 +58,10 @@ st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON, layout="wide")
 with open(resume_file, "rb") as pdf_file:
     PDFbyte = pdf_file.read()
     profile_pic = Image.open(profile_pic)
+    csc_print = Image.open(csc_print)
+    logistica = Image.open(log1)
+    salesbr   =  Image.open(sales)
+    comercial01 = Image.open(comercial)
 
 st.title(NAME)
 
@@ -257,12 +264,14 @@ csc, comercial = st.columns(2, gap="small")
 with csc:
 
     st.subheader("Dashboard CSC")
+   
 
     st.write("""
         O dashboard foi desenvolvido para mostrar
         os principais indicadores chave da central de serviços
     """)
-    st.image(Image.open("assets\cscprint.png"), caption='Dashboard de CSC', width=300)
+    
+    st.image(csc_print, width=300, caption = 'Dashboard CSC')
 
     with open("assets\csc.pbix", "rb") as csc_file:
         btn01 = st.download_button(
@@ -279,7 +288,7 @@ with comercial:
         O dashboard foi desenvolvido para mostrar
         os principais indicadores chave da central de serviços
     """)
-    st.image(Image.open("assets\Dashboard.png"), caption='Dashboard de Comercial', width=300)
+    st.image(comercial01, caption='Dashboard de Comercial', width=300)
 
     with open("assets\Dashboard.pbix", "rb") as dash_file:
         btn01 = st.download_button(
