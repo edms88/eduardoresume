@@ -17,6 +17,7 @@ dash01      = current_dir / "assets" / "csc.pbix"
 dash02      = current_dir / "assets" / "Dashboard.pbix"
 dash03      = current_dir / "assets" / "South cargo vzero.pbix"
 dash04      = current_dir / "assets" / "Sales BRasil - IPTV.pbix"
+sqldw       = current_dir / "assets" / "Views_qualitor_SA.rar"
 
 
 # General Settings
@@ -359,8 +360,13 @@ st.write('-' * 30)
 st.title('MySql')
 st.write("São mais de 48 relatórios criados para diversas demandas e situações.")
 
-with open("assets\Views_qualitor_SA.rar", "rb") as sql_file:
-    download_sql = st.download_button(label="Baixar Views do SQL", data=sql_file, file_name="assets\Views_qualitor_SA.rar")
+with open(sqldw, "rb") as sql_file:
+    sql_01 = sql_file.read()
+    st.download_button(
+        label="Baixar Views do SQL",
+        data=sql_01,
+        file_name="assets\Views_qualitor_SA.rar"
+    )
 
 st.write('-' * 30)
 
