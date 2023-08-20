@@ -20,6 +20,7 @@ dash04      = current_dir / "assets" / "Sales BRasil - IPTV.pbix"
 sqldw       = current_dir / "assets" / "Views_qualitor_SA.rar"
 python01    = current_dir / "assets" / "enviar_mensagem.py"
 python02    = current_dir / "assets" / "Extract_Pypdf2.txt"
+python03    = current_dir / "assets" / "Request API.txt"
 
 
 # General Settings
@@ -394,5 +395,21 @@ with open(python02, "rb") as pdfextr:
         data=py02,
         file_name=python02.name,
         mime="application/octet-stream")
+
+st.write("REQUEST API")
+
+with open(python03, "rb") as req:
+    py03 = req.read()
+    st.download_button(
+        label="Download",
+        data=py03,
+        file_name=python03.name,
+        mime="application/octet-stream")
+
+st.write("""
+Estamos sempre criando algum novo, recomendo utilizar a rede github para
+se manter informado
+""")
+
 
 st.write('-' * 30)
