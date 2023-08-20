@@ -13,6 +13,11 @@ constatlogo = current_dir / "assets" / "constatlogo.png"
 log1        = current_dir / "assets" / "logistica.png"
 sales       = current_dir / "assets" / "Sales BRasil.png"
 comercial   = current_dir / "assets" / "vendas01.png"
+dash01      = current_dir / "assets" / "csc.pbix"
+dash02      = current_dir / "assets" / "Dashboard.pbix"
+dash03      = current_dir / "assets" / "South cargo vzero.pbix"
+dash04      = current_dir / "assets" / "Sales BRasil - IPTV.pbix"
+
 
 # General Settings
 PAGE_TITLE = 'Eduardo Mendes'
@@ -62,6 +67,22 @@ with open(resume_file, "rb") as pdf_file:
     logistica = Image.open(log1)
     salesbr   =  Image.open(sales)
     comercial01 = Image.open(comercial)
+    logcargo = Image.open(log1)
+    sales_img = Image.open(sales)
+
+with open(dash01, "rb") as dashboard_file01:
+    dash01bt  = dashboard_file01.read()
+
+
+with open(dash02, "rb") as dashboard_file02:
+    dash02bt  = dashboard_file02.read()
+
+with open(dash03, "rb") as dashboard_file03:
+    dash03bt  = dashboard_file03.read()
+
+with open(dash04, "rb") as dashboard_file04:
+    dash04bt  = dashboard_file04.read()
+    
 
 st.title(NAME)
 
@@ -258,6 +279,8 @@ with col16:
 
 st.write("-" * 30)
 
+
+
 st.title("Dashboards em Microsoft Power BI")
 csc, comercial = st.columns(2, gap="small")
 
@@ -272,70 +295,74 @@ with csc:
     """)
     
     st.image(csc_print, width=300, caption = 'Dashboard CSC')
+    st.download_button(
+        label="Download",
+        data=dash01bt,
+        file_name='dashboard-csc',
+        mime="application/octet-stream",
+    
+    )
 
-    with open("assets\csc.pbix", "rb") as csc_file:
-        btn01 = st.download_button(
-            label="Download",
-            data=csc_file,
-            file_name="csc.pbix"
-        )
-st.write('-' * 30)
 with comercial:
-
-    st.subheader("Dashboard Comercial")
+    st.subheader("Dashboard Comercial-produtos")
 
     st.write("""
-        O dashboard foi desenvolvido para mostrar
-        os principais indicadores chave da central de serviços
-    """)
+        O dashboard foi criado com a visualização por produto não regionalizado""")
+        
     st.image(comercial01, caption='Dashboard de Comercial', width=300)
+        
+    st.download_button(
+        label="Download",
+            data=dash02bt,
+            file_name='dashboard-csc',
+            mime="application/octet-stream")
 
-    with open("assets\Dashboard.pbix", "rb") as dash_file:
-        btn01 = st.download_button(
-            label="Download",
-            data=dash_file,
-            file_name="Dashboard.pbix"
-        )
 
-logistica, comercial = st.columns(2, gap="small")
+st.write('-' * 30)
 
-with logistica:
+carg, slbr = st.columns(2, gap="small")
 
+with carg:
     st.subheader("Dashboard Logística")
 
     st.write("""
         O dashboard foi desenvolvido para mostrar
         os principais portuarios da america latina
     """)
-    st.image(Image.open("assets\logistica.png"), caption='Dashboard de logistica', width=300)
+    st.image(logcargo, caption='Dashboard de logistica', width=300)
 
-    with open("assets\South cargo vzero.pbix", "rb") as sc_file:
-        btn01 = st.download_button(
-            label="Download",
-            data=sc_file,
-            file_name="South cargo vzero.pbix"
-        )
-st.write('-' * 30)
+    st.download_button(
+        label="Download",
+            data=dash03bt,
+            file_name='dashboard-csc',
+            mime="application/octet-stream")
 
-with comercial:
 
+with slbr:
     st.subheader("Dashboard Rastreio de vendas")
 
     st.write("""
         O dashboard foi desenvolvido para mostrar
         os principais indicadores chave da central de serviços
     """)
-    st.image(Image.open("assets\Sales BRasil.png"), caption='Dashboard de Rastreio de Vendas', width=300)
+    st.image(sales_img, caption='Dashboard de Rastreio de Vendas', width=300)
 
-    with open("assets\Sales BRasil - IPTV.pbix", "rb") as Slbr:
-        btn01 = st.download_button(
-            label="Download",
-            data=Slbr,
-            file_name="Sales BRasil - IPTV.pbix"
-        )
+    st.download_button(
+        label="Download",
+            data=dash04bt,
+            file_name='dashboard-csc',
+            mime="application/octet-stream")
+
+
+st.write('-' * 30)
 
 st.title('MySql')
 st.write("São mais de 48 relatórios criados para diversas demandas e situações.")
 
 with open("assets\Views_qualitor_SA.rar", "rb") as sql_file:
     download_sql = st.download_button(label="Baixar Views do SQL", data=sql_file, file_name="assets\Views_qualitor_SA.rar")
+
+st.write('-' * 30)
+
+st.title('Python')
+st.write("")
