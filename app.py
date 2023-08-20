@@ -18,6 +18,8 @@ dash02      = current_dir / "assets" / "Dashboard.pbix"
 dash03      = current_dir / "assets" / "South cargo vzero.pbix"
 dash04      = current_dir / "assets" / "Sales BRasil - IPTV.pbix"
 sqldw       = current_dir / "assets" / "Views_qualitor_SA.rar"
+python01    = current_dir / "assets" / "enviar_mensagem.py"
+python02    = current_dir / "assets" / "Extract_Pypdf2.txt"
 
 
 # General Settings
@@ -299,7 +301,7 @@ with csc:
     st.download_button(
         label="Download",
         data=dash01bt,
-        file_name='dashboard-csc',
+        file_name=dash01.name,
         mime="application/octet-stream",
     
     )
@@ -315,7 +317,7 @@ with comercial:
     st.download_button(
         label="Download",
             data=dash02bt,
-            file_name='dashboard-csc',
+            file_name=dash02.name,
             mime="application/octet-stream")
 
 
@@ -335,7 +337,7 @@ with carg:
     st.download_button(
         label="Download",
             data=dash03bt,
-            file_name='dashboard-csc',
+            file_name=dash03.name,
             mime="application/octet-stream")
 
 
@@ -351,7 +353,7 @@ with slbr:
     st.download_button(
         label="Download",
             data=dash04bt,
-            file_name='dashboard-csc',
+            file_name=dash04.name,
             mime="application/octet-stream")
 
 
@@ -365,10 +367,32 @@ with open(sqldw, "rb") as sql_file:
     st.download_button(
         label="Baixar Views do SQL",
         data=sql_01,
-        file_name="Querys & Views SQL",
+        file_name=sqldw.name,
         mime="application/octet-stream")
 
 st.write('-' * 30)
 
 st.title('Python')
-st.write("")
+st.write("Alguns pequenos exemplos de scripts em python que possuimos")
+
+st.write("Seleciona usuarios para envio de mensagens atumeticas via qualquer operador de mensagem MS")
+
+with open(python01, "rb") as send01:
+    py01 = send01.read()
+    st.download_button(
+        label="Download",
+        data=py01,
+        file_name=python01.name,
+        mime="application/octet-stream")
+
+st.write("Extrai qualquer informaçãodesejada de arquivos .pdf e cria dataframes com eles")
+
+with open(python02, "rb") as pdfextr:
+    py02 = pdfextr.read()
+    st.download_button(
+        label="Download",
+        data=py02,
+        file_name=python02.name,
+        mime="application/octet-stream")
+
+st.write('-' * 30)
