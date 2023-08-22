@@ -376,7 +376,7 @@ st.write('-' * 30)
 st.title('Python')
 st.write("Alguns pequenos exemplos de scripts em python que possuimos")
 
-st.write("Seleciona usuarios para envio de mensagens atumeticas via qualquer operador de mensagem MS")
+st.write("Seleciona usuarios para envio de mensagens automaticas a qualquer operador de mensagem MS")
 
 with open(python01, "rb") as send01:
     py01 = send01.read()
