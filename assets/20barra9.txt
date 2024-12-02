@@ -1,0 +1,13 @@
+:triangular_flag_on_post: Coleta e Integração de Dados: Extraio e integro dados de múltiplas fontes (bancos de dados, APIs, Excel), consolidando-os em estruturas coerentes no Power BI.
+
+:triangular_flag_on_post: Modelagem de Dados Avançada: Desenvolvo modelos de dados robustos, criando relacionamentos e medidas complexas em DAX para análises detalhadas e precisas.
+
+:triangular_flag_on_post: Desenvolvimento de Dashboards Interativos: Crio dashboards e relatórios interativos que comunicam dados de forma clara e eficaz, ajudando stakeholders a identificar tendências e tomar decisões baseadas em dados.
+
+:triangular_flag_on_post: Otimização de Desempenho: Garanto a eficiência dos relatórios otimizando queries e modelos de dados, proporcionando uma experiência de análise rápida e fluida.
+
+:triangular_flag_on_post: Colaboração e Compartilhamento: Publico e gerencio dashboards no Power BI Service, facilitando o acesso seguro e colaborativo às informações essenciais para o negócio.
+
+:triangular_flag_on_post: Monitoramento e Manutenção: Monitoro e mantenho dashboards em produção, realizando atualizações conforme as necessidades do negócio evoluem.
+
+:triangular_flag_on_post: Capacitação e Documentação: Treino equipes na utilização dos dashboards e documento processos para assegurar a continuidade e a transferência de conhecimento.

@@ -1,0 +1,25 @@
+
+:triangular_flag_on_post: Análise e Modelagem de indicadores gerenciais e financeiros.
+
+:triangular_flag_on_post: Automação de processos.
+
+:triangular_flag_on_post: Supply chain
+
+:triangular_flag_on_post: Colaboração em equipes multidisciplinares.
+
+:triangular_flag_on_post: Soluções estratégicas para atender às demandas dos clientes.
+
+:triangular_flag_on_post: Bancos de dados como Postgres e Oracle.
+
+:triangular_flag_on_post: Linguagens de programação: Python, SQL.
+
+:triangular_flag_on_post: Criação de chatbots.
+
+:triangular_flag_on_post: Django, Streamlit, Pandas Profiling, Tensor Flow.
+
+:triangular_flag_on_post: Dashboards interativos no Power BI.
+
+:triangular_flag_on_post: ElasticSearch, Logstash e Kibana.
+
+:triangular_flag_on_post: DataDrive, pipeline e ETL.
+

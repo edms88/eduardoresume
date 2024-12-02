@@ -1,0 +1,17 @@
+    Python :star: :star: :star::star:
+
+    SQL :star: :star: :star::star:
+
+    English :star: :star: :star:
+
+    Data Engineering :star: :star: :star:
+
+    Coding :star: :star: :star:
+
+    Spanish :star: :star:
+
+    Data Science :star: :star:
+
+    HTML :star: :star:
+
+    CSS :star: :star:

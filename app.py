@@ -17,10 +17,13 @@ dash01      = current_dir / "assets" / "csc.pbix"
 dash02      = current_dir / "assets" / "Dashboard.pbix"
 dash03      = current_dir / "assets" / "South cargo vzero.pbix"
 dash04      = current_dir / "assets" / "Sales BRasil - IPTV.pbix"
+bio         = current_dir / "assets" / "description.txt" 
 sqldw       = current_dir / "assets" / "Views_qualitor_SA.rar"
 python01    = current_dir / "assets" / "enviar_mensagem.py"
 python02    = current_dir / "assets" / "Extract_Pypdf2.txt"
 python03    = current_dir / "assets" / "Request API.txt"
+skill       = current_dir / "assets" / "skils.txt"
+barra09     = current_dir / "assets"/ "20barra9.txt"
 
 
 # General Settings
@@ -28,26 +31,6 @@ PAGE_TITLE = 'Eduardo Mendes'
 PAGE_ICON = ':notebook:'
 NAME = 'Eduardo Mendes da Silveira'
 
-DESCRIPTION = '''
-    Python :star: :star: :star::star:
-
-    SQL :star: :star: :star::star:
-
-    English :star: :star: :star:
-
-    Data Engineering :star: :star: :star:
-
-    Coding :star: :star: :star:
-
-    Spanish :star: :star:
-
-    Data Science :star: :star:
-
-    HTML :star: :star:
-
-    CSS :star: :star:
-
-'''
 
 EMAIL = 'eduardoms1988@gmail.com'
 LINKDIN = 'https://www.linkedin.com/in/eduardo-mendes-da-silveira-5476a1237/'
@@ -77,7 +60,6 @@ with open(resume_file, "rb") as pdf_file:
 with open(dash01, "rb") as dashboard_file01:
     dash01bt  = dashboard_file01.read()
 
-
 with open(dash02, "rb") as dashboard_file02:
     dash02bt  = dashboard_file02.read()
 
@@ -86,7 +68,16 @@ with open(dash03, "rb") as dashboard_file03:
 
 with open(dash04, "rb") as dashboard_file04:
     dash04bt  = dashboard_file04.read()
-    
+
+with open (bio, 'r', encoding='utf-8') as bio_label:
+    bio_label = bio_label.read()
+
+with open (skill, 'r', encoding='utf-8') as skill_label:
+    skill_label = skill_label.read()
+
+with open(barra09, 'r', encoding='utf-8') as barra9_file: 
+    barra9_label = barra9_file.read()  
+
 
 st.title(NAME)
 
@@ -103,7 +94,9 @@ with col1:
 
 with col2:
     st.subheader('Skills')
-    st.write(DESCRIPTION)
+   
+    st.write(bio_label)
+
     st.download_button(
         label='Download Resume',
         data=PDFbyte,
@@ -125,26 +118,48 @@ st.write("""
 
 st.subheader('Skills')
 
-st.write("""
-    1) Análise e Modelagem de indicadores gerenciais e financeiros.
-    2) Automação de processos.
-    3) Supply chain do setor agrícola.
-    4) Colaboração em equipes multidisciplinares.
-    5) Soluções estratégicas para atender às demandas dos clientes.
-    """)
+st.write(skill_label)
 
-st.subheader('Hard Skills')
-st.write(''' 
-    1) Bancos de dados como Postgres e Oracle.
-    2) Linguagens de programação: Python, SQL.
-    3) Criação de chatbots.
-    4) Django, Streamlit, Pandas Profiling, Tensor Flow.
-    5) Dashboards interativos no Power BI.
-    6) ElasticSearch, Logstash e Kibana.
-    7) DataDrive, pipeline e ETL.
-    ''')
 
 ### Histórico profissional ###
+st.write("-"*30)
+col7, col8 = st.columns(2, gap='small')
+with col7:
+
+    st.subheader('[20barra9](https://www.20barra9.com/)')
+    st.header('Analista de dados')
+    st.subheader('07/2024 até o momento')
+
+    st.write(barra9_label)
+with col8:
+     
+    st.subheader("Competências")
+    st.write("""
+        :label: Visualização de dados
+
+        :label: Manipulação e tratamento de grandes volumes de dados
+
+        :label: SQL
+
+        :label: ElasticSearch
+
+        :label: Análise Exploratória de dados
+
+        :label: Inteligência de negócios (BI)
+
+        :label: Microsoft Azure Machine Learning
+
+        :label: Microsoft Power BI
+
+        :label: Microsoft Office
+
+        :label: Python
+
+        :label: HTML & CSS
+    """)
+
+
+
 
 st.write("-" * 30)
 col9, col10 = st.columns(2, gap='small')
@@ -152,12 +167,15 @@ with col9:
 
     st.subheader('[Constat Serviços de Tecnologia](https://constat.com.br/)')
     st.header('Analista de dados')
-    st.subheader('05/2020 - até o momento')
+    st.subheader('05/2020 - 07/2024')
 
     st.write("""
-        :triangular_flag_on_post: Elaboração e análise de Indicadores Gerenciais e Financeiros para suportar decisões corporativas estratégicas.
-        :triangular_flag_on_post: Desenvolvimento de relatórios automatizados e modelos de projeção para facilitar a análise de dados e o processo de tomada de decisão.
-        :triangular_flag_on_post: Modelagem e mineração de dados em bancos de dados como Postgres, Oracle, e web scraping usando Python (Scrapy e BeautifulSoup) para coletar e processar informações relevantes.
+        
+             :triangular_flag_on_post: Elaboração e análise de Indicadores Gerenciais e Financeiros para suportar decisões corporativas estratégicas.
+        
+             :triangular_flag_on_post: Desenvolvimento de relatórios automatizados e modelos de projeção para facilitar a análise de dados e o processo de tomada de decisão.
+        
+             :triangular_flag_on_post: Modelagem e mineração de dados em bancos de dados como Postgres, Oracle, e web scraping usando Python (Scrapy e BeautifulSoup) para coletar e processar informações relevantes.
     """)
 
 with col10:
@@ -196,14 +214,18 @@ with col11:
     st.subheader('02/2018 - 03/2020')
 
     st.write("""
-        :triangular_flag_on_post: Elaboração de relatórios abrangendo indicadores de produtividade como OLE (Overall Labor Effectiveness), man/hour, MTTR (Mean Time to Repair), eficiência mecânica, além de métricas financeiras como EBITDA, ROI, Margem Bruta e SecurePass.
-        :triangular_flag_on_post: Participação ativa em reuniões gerenciais utilizando a metodologia Agile, contribuindo com insights e soluções para crises e desafios enfrentados por clientes de padrão exclusivo.
-        :triangular_flag_on_post: Responsável pelo planejamento e análise dos dados financeiros e operacionais da região Sul, visando impulsionar a eficiência e o desempenho da organização.
+
+             :triangular_flag_on_post: Elaboração de relatórios abrangendo indicadores de produtividade como OLE (Overall Labor Effectiveness), man/hour, MTTR (Mean Time to Repair), eficiência mecânica, além de métricas financeiras como EBITDA, ROI, Margem Bruta e SecurePass.
+        
+             :triangular_flag_on_post: Participação ativa em reuniões gerenciais utilizando a metodologia Agile, contribuindo com insights e soluções para crises e desafios enfrentados por clientes de padrão exclusivo.
+        
+             :triangular_flag_on_post: Responsável pelo planejamento e análise dos dados financeiros e operacionais da região Sul, visando impulsionar a eficiência e o desempenho da organização.
     """)
 
 with col12:
     st.subheader("Competências")
     st.write("""
+             
         :label: Compreender as necessidades dos clientes para a criação do produto ou serviço
 
         :label: Visualização de dados
@@ -226,10 +248,14 @@ with col13:
     st.subheader('12/2016 - 03/2018')
 
     st.write("""
-        :triangular_flag_on_post: Responsável pelo apoio logístico de obras nas regiões norte e sul das Américas, colaborando com os setores de especificação de projetos novos, modernizações e acessibilidade.
-        :triangular_flag_on_post: Desenvolvimento e implementação de processos de melhoria para resolver demandas de reprogramação, aditivos contratuais e apresentação de indicadores-chave de desempenho como MTTR, MTBF e LEAN TIME, visando otimizar prazos e eficiência operacional.
-        :triangular_flag_on_post: Análise e apresentação dos indicadores de entrega para a América Latina, monitorando o cumprimento de prazos e identificando áreas de melhoria para garantir o sucesso das operações.
-        :triangular_flag_on_post: Colaboração com equipes multidisciplinares para garantir o alinhamento entre as áreas de logística, especificação de projetos e demandas dos clientes, assegurando uma coordenação eficiente e o cumprimento dos objetivos.
+        
+             :triangular_flag_on_post: Responsável pelo apoio logístico de obras nas regiões norte e sul das Américas, colaborando com os setores de especificação de projetos novos, modernizações e acessibilidade.
+        
+             :triangular_flag_on_post: Desenvolvimento e implementação de processos de melhoria para resolver demandas de reprogramação, aditivos contratuais e apresentação de indicadores-chave de desempenho como MTTR, MTBF e LEAN TIME, visando otimizar prazos e eficiência operacional.
+        
+             :triangular_flag_on_post: Análise e apresentação dos indicadores de entrega para a América Latina, monitorando o cumprimento de prazos e identificando áreas de melhoria para garantir o sucesso das operações.
+        
+             :triangular_flag_on_post: Colaboração com equipes multidisciplinares para garantir o alinhamento entre as áreas de logística, especificação de projetos e demandas dos clientes, assegurando uma coordenação eficiente e o cumprimento dos objetivos.
     """)
 
 with col14:
@@ -258,8 +284,11 @@ with col15:
     st.subheader('10/2013 - 03/2016')
 
     st.write("""
+              
         :triangular_flag_on_post: Responsável pelo envio de relatórios gerenciais com indicadores como RFP, OLE, man/hour, MTTR e eficiência mecânica, para auxiliar na tomada de decisões estratégicas.
+        
         :triangular_flag_on_post: Gerenciamento do envio de demonstrativos de comissões, arquivos e controle de notas de prestação de serviço, assegurando precisão e conformidade com requisitos legais.
+        
         :triangular_flag_on_post: Emissão de certificados de análise de exportação e notas fiscais de remessa, incluindo operações de triangulação, para garantir o cumprimento de obrigações fiscais e conformidade regulatória.
     """)
 
