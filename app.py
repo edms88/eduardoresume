@@ -17,7 +17,7 @@ dash01      = current_dir / "assets" / "csc.pbix"
 dash02      = current_dir / "assets" / "Dashboard.pbix"
 dash03      = current_dir / "assets" / "South cargo vzero.pbix"
 dash04      = current_dir / "assets" / "Sales BRasil - IPTV.pbix"
-bio         = current_dir / "assets" / "description.txt" 
+ 
 sqldw       = current_dir / "assets" / "Views_qualitor_SA.rar"
 python01    = current_dir / "assets" / "enviar_mensagem.py"
 python02    = current_dir / "assets" / "Extract_Pypdf2.txt"
@@ -69,12 +69,6 @@ with open(dash03, "rb") as dashboard_file03:
 with open(dash04, "rb") as dashboard_file04:
     dash04bt  = dashboard_file04.read()
 
-with open (bio, 'r', encoding='utf-8') as bio_label:
-    bio_label = bio_label.read()
-
-with open (skill, 'r', encoding='utf-8') as skill_label:
-    skill_label = skill_label.read()
-
 with open(barra09, 'r', encoding='utf-8') as barra9_file: 
     barra9_label = barra9_file.read()  
 
@@ -95,7 +89,26 @@ with col1:
 with col2:
     st.subheader('Skills')
    
-    st.write(bio_label)
+    st.write(   
+        """
+        Python :star: :star: :star::star:
+
+    SQL :star: :star: :star::star:
+
+    English :star: :star: :star:
+
+    Data Engineering :star: :star: :star:
+
+    Coding :star: :star: :star:
+
+    Spanish :star: :star:
+
+    Data Science :star: :star:
+
+    HTML :star: :star:
+
+    CSS :star: :star:
+    """)
 
     st.download_button(
         label='Download Resume',
@@ -115,10 +128,6 @@ st.write("""
     1) Graduação Bacharel em Administração (7º semestre)
     2) Tecnólogo em Análise e desenvolvimento de sistemas (em andamento)
     """)
-
-st.subheader('Skills')
-
-st.write(skill_label)
 
 
 ### Histórico profissional ###
