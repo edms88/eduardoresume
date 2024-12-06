@@ -23,7 +23,7 @@ python01    = current_dir / "assets" / "enviar_mensagem.py"
 python02    = current_dir / "assets" / "Extract_Pypdf2.txt"
 python03    = current_dir / "assets" / "Request API.txt"
 skill       = current_dir / "assets" / "skils.txt"
-barra09     = current_dir / "assets"/ "20barra9.txt"
+
 
 
 # General Settings
@@ -69,8 +69,6 @@ with open(dash03, "rb") as dashboard_file03:
 with open(dash04, "rb") as dashboard_file04:
     dash04bt  = dashboard_file04.read()
 
-with open(barra09, 'r', encoding='utf-8') as barra9_file: 
-    barra9_label = barra9_file.read()  
 
 
 st.title(NAME)
@@ -139,7 +137,21 @@ with col7:
     st.header('Analista de dados')
     st.subheader('07/2024 até o momento')
 
-    st.write(barra9_label)
+    st.write("""
+            :triangular_flag_on_post: Coleta e Integração de Dados: Extraio e integro dados de múltiplas fontes (bancos de dados, APIs, Excel), consolidando-os em estruturas coerentes no Power BI.
+
+            :triangular_flag_on_post: Modelagem de Dados Avançada: Desenvolvo modelos de dados robustos, criando relacionamentos e medidas complexas em DAX para análises detalhadas e precisas.
+
+            :triangular_flag_on_post: Desenvolvimento de Dashboards Interativos: Crio dashboards e relatórios interativos que comunicam dados de forma clara e eficaz, ajudando stakeholders a identificar tendências e tomar decisões baseadas em dados.
+
+            :triangular_flag_on_post: Otimização de Desempenho: Garanto a eficiência dos relatórios otimizando queries e modelos de dados, proporcionando uma experiência de análise rápida e fluida.
+
+            :triangular_flag_on_post: Colaboração e Compartilhamento: Publico e gerencio dashboards no Power BI Service, facilitando o acesso seguro e colaborativo às informações essenciais para o negócio.
+
+            :triangular_flag_on_post: Monitoramento e Manutenção: Monitoro e mantenho dashboards em produção, realizando atualizações conforme as necessidades do negócio evoluem.
+
+            :triangular_flag_on_post: Capacitação e Documentação: Treino equipes na utilização dos dashboards e documento processos para assegurar a continuidade e a transferência de conhecimento."""
+             )
 with col8:
      
     st.subheader("Competências")
