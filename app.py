@@ -24,6 +24,11 @@ python02    = current_dir / "assets" / "Extract_Pypdf2.txt"
 python03    = current_dir / "assets" / "Request API.txt"
 skill       = current_dir / "assets" / "skils.txt"
 
+#dash05     = current_dir / "assets" / "Painel Suprimentos.pbix"
+suprimento_img = current_dir / "assets" / "painel_suprimentos.png"
+
+#dash06     = current_dir / "assets" / "Painel Receita.pbix"
+receita_img = current_dir / "assets"/ "painel_receitas.png"
 
 
 # General Settings
@@ -35,7 +40,7 @@ NAME = 'Eduardo Mendes da Silveira'
 EMAIL = 'eduardoms1988@gmail.com'
 LINKDIN = 'https://www.linkedin.com/in/eduardo-mendes-da-silveira-5476a1237/'
 INSTAGRAM = 'https://www.instagram.com/eduardoms88/'
-GITHUB = 'https://www.github.com/du.mendes/'
+GITHUB = 'https://github.com/edms88'
 
 
 PROJECTS = {
@@ -56,6 +61,9 @@ with open(resume_file, "rb") as pdf_file:
     comercial01 = Image.open(comercial)
     logcargo = Image.open(log1)
     sales_img = Image.open(sales)
+    painel_receita = Image.open(receita_img)
+    painel_supri = Image.open(suprimento_img)
+
 
 with open(dash01, "rb") as dashboard_file01:
     dash01bt  = dashboard_file01.read()
@@ -71,6 +79,9 @@ with open(dash04, "rb") as dashboard_file04:
 
 
 
+
+
+
 st.title(NAME)
 
 # --- HERO SECTION ---
@@ -83,6 +94,7 @@ with col1:
     st.write(':camera:[Instagram](https://www.instagram.com/eduardoms88/)')
     st.write(':briefcase:[LinkedIn](https://www.linkedin.com/in/eduardo-mendes-da-silveira-5476a1237)')
     st.write(':blue_book:[Facebook](https://www.facebook.com/du.mendes/)')
+    st.write(':computer:[GitHub](https://github.com/edms88)')
 
 with col2:
     st.subheader('Skills')
@@ -124,7 +136,7 @@ st.subheader("Graduações")
 
 st.write(""" 
     1) Graduação Bacharel em Administração (7º semestre)
-    2) Tecnólogo em Análise e desenvolvimento de sistemas (em andamento)
+    2) Tecnólogo em Análise e desenvolvimento de sistemas (Concluído)
     """)
 
 
@@ -336,6 +348,37 @@ st.write("-" * 30)
 
 
 st.title("Dashboards em Microsoft Power BI")
+suprimentos, receita = st.columns(2, gap="small")
+
+with suprimentos:
+
+    st.subheader("Suprimentos")
+    
+    st.image(painel_supri, width=300, caption= "Suprimentos")
+
+    st.write("""
+        O dashboard foi desenvolvido para mostrar
+        os principais indicadores indicadores de Suprimentos  """)
+    
+    
+    st.write(':computer:[Download](https://drive.google.com/file/d/1vsB8EW2iKkkzvlqLYKWoWDeXK7KjvwLu/view?usp=sharing)')
+    
+with receita:
+
+    st.subheader("Receitas")
+    
+    st.image(painel_receita, width=300, caption= "Receitas")
+
+    st.write("""
+        O dashboard foi desenvolvido para mostrar um Overview, rank de atendentes com grafico EXCLUSIVO
+             E por final um CURVA ABC dinamica.  """)
+    
+    
+
+    st.write(':computer:[Download](https://drive.google.com/file/d/1vsB8EW2iKkkzvlqLYKWoWDeXK7KjvwLu/view?usp=sharing)')
+
+st.write('-' * 30)
+
 csc, comercial = st.columns(2, gap="small")
 
 with csc:
@@ -411,7 +454,7 @@ with slbr:
 st.write('-' * 30)
 
 st.title('MySql')
-st.write("São mais de 48 relatórios criados para diversas demandas e situações.")
+st.write("16 querys em sql criados para diversas demandas e situações.")
 
 with open(sqldw, "rb") as sql_file:
     sql_01 = sql_file.read()
